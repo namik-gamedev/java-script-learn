@@ -12,7 +12,7 @@ Array.prototype.myFilter = function (cb) {
 }
 // массив из нечетных чисел
 const filteredArray = array.myFilter((i) => i % 2)
-console.log('filter: ', filteredArray)
+console.log('filter: ', filteredArray) // [1, 5, 13, 7]
 
 Array.prototype.myMap = function (cb) {
     let finalArray = []
@@ -23,7 +23,7 @@ Array.prototype.myMap = function (cb) {
     return finalArray
 }
 // массив с элементами, возведенными в квадрат
-const mapedArray = array.myMap((i) => i ** 2)
+const mapedArray = array.myMap((i) => i ** 2) // [1, 4, 25, 36, 144, 169, 256, 49]
 console.log('map: ', mapedArray)
 
 Array.prototype.myReduce = function (cb, startAmount) {
@@ -35,5 +35,5 @@ Array.prototype.myReduce = function (cb, startAmount) {
 }
 // сумма квадратов всех элементов массива
 const reducedNum = array.myReduce((total, i) => total += i ** 2, 0)
-console.log('reduce: ', reducedNum)
+console.log('reduce: ', reducedNum) // 684
 
