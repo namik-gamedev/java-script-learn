@@ -1,3 +1,5 @@
+// custom array methods
+
 const array = [1, 2, 5, 6, 12, 13, 16, 7]
 
 Array.prototype.myFilter = function (cb) {
