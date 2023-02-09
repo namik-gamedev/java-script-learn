@@ -41,8 +41,7 @@ Array.prototype.mySort = function (cb) {
     for (let i = 0; i < this.length; i++) {
         const a = this[i]
         const b = this[i + 1]
-        const res = cb(a, b)
-        if (res > 0) {
+        if (cb(a, b) > 0) {
             this[i] = b
             this[i + 1] = a
             i -= 2
