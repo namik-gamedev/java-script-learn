@@ -1,6 +1,6 @@
 // custom array methods
 
-const array = [1, 2, 5, 6, 12, 13, 16, 7]
+const array = [1, 5, 2, 13, 16, 6, 12, 7]
 
 Array.prototype.myFilter = function (cb) {
     let finalArray = []
@@ -37,3 +37,19 @@ Array.prototype.myReduce = function (cb, startAmount) {
 const reducedNum = array.myReduce((total, i) => total += i ** 2, 0)
 console.log('reduce: ', reducedNum) // 684
 
+Array.prototype.mySort = function (cb) {
+    for (let i = 0; i < this.length; i++) {
+        const a = this[i]
+        const b = this[i + 1]
+        const res = cb(a, b)
+        if (res > 0) {
+            this[i] = b
+            this[i + 1] = a
+            i -= 2
+        }
+    }
+    return this
+}
+
+const sortedArray = array.mySort((a, b) => a - b)
+console.log('sort: ', sortedArray)
