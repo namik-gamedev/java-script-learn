@@ -37,18 +37,3 @@ Array.prototype.myReduce = function (cb, startAmount) {
 const reducedNum = array.myReduce((total, i) => total += i ** 2, 0)
 console.log('reduce: ', reducedNum) // 684
 
-Array.prototype.mySort = function (cb) {
-    for (let i = 0; i < this.length; i++) {
-        const a = this[i]
-        const b = this[i + 1]
-        if (cb(a, b) > 0) {
-            this[i] = b
-            this[i + 1] = a
-            i -= 2
-        }
-    }
-    return this
-}
-
-const sortedArray = array.mySort((a, b) => a - b)
-console.log('sort: ', sortedArray)
