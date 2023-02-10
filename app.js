@@ -37,3 +37,13 @@ Array.prototype.myReduce = function (cb, startAmount) {
 const reducedNum = array.myReduce((total, i) => total += i ** 2, 0)
 console.log('reduce: ', reducedNum) // 684
 
+Array.prototype.myReverse = function () {
+    const finalArray = []
+    for (let i = this.length - 1; i >= 0; i--) {
+        finalArray.push(this[i])
+    }
+    return finalArray
+}
+// реверснутый массивв
+const reversedNum = array.myReverse()
+console.log('reverse: ', reversedNum) // [7, 12, 6, 16, 13, 2, 5, 1]
